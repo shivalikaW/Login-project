@@ -1,0 +1,48 @@
+
+<div style="text-align:center">
+        <h1>
+          Welcome to {{ title }}
+        </h1>
+      </div>
+      <table  style="width:100%; background-color: darkgray;">
+          <tr style="text-align: center; height: 300px;" >
+     <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 offset-md-2">
+                       <h2>LOGIN FORM</h2>
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                            <div class="formfield">
+                                <label for="username">User Name</label>
+                                <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" required />
+                                <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                                    <div *ngIf="username.errors.required">User Name is required</div>
+                                </div>
+                            </div>
+                           
+                            <div class="formfield">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+                                <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                                    <div *ngIf="password.errors.required">Password is required</div>
+                                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+                            <div class="formfield">
+                                <button class="button button1">Login</button> &nbsp;&nbsp;&nbsp;
+                                <button class="button button1" (click)="onClick()">Back</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="formfield"><h4>User Name is <b>{{model.username}} </b>and Password is <b>{{model.password}}</b></h4></div>
+      </tr>
+    </table>
+      <div style="text-align:right">
+          <h4>
+            Maintainer is SHIVALIKA GUPTA
+          </h4>
+        </div> 
+      

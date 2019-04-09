@@ -1,0 +1,59 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}
+  </h1>
+</div>
+<table  style="width:100%; background-color: darkgray;">
+    <tr style="text-align: center; height: 300px;" >
+        <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="jumbotron">
+                  <h2>EDIT RECORD</h2>
+                  <form #f="ngForm" (submit)="edit(f)">
+                      <div class="formfield">
+                          <label for="srno">Sr. No</label>
+                          <input type="number" class="form-control" [(ngModel)]="model.srno" #srno="ngModel" name="srno" required />
+                        </div>
+                    <div class="formfield">
+                      <label for="fname">First Name</label>
+                      <input type="text" class="form-control" [(ngModel)]="model.fname" #fname="ngModel" name="fname" required />
+                    </div>
+                    <div class="formfield">
+                      <label for="lname">Last Name</label>
+                      <input type="text" class="form-control" [(ngModel)]="model.lname" #lname="ngModel" name="lname" required />
+                      </div>
+                      <div class="formfield">
+                          <label for="post">Post</label>
+                          <input type="text" class="form-control" name="post" [(ngModel)]="model.post" #post="ngModel"  required />
+                    </div>
+                    <div class="formfield">
+                      <label for="salary">Salary</label>
+                      <input type="number" class="form-control" [(ngModel)]="model.salary" #salary="ngModel" name="salary" required  />
+                    </div>
+                    <div class="formfield">
+                      <label for="mobile">Mobile No.</label>
+                      <input type="number" class="form-control" [(ngModel)]="model.mobile" #mobile="ngModel" name="mobile" required  />
+                    </div>
+                    <div class="formfield">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" name="email" required email />
+                    </div>
+          
+                    <div class="formfield">
+                      <button class="button button1">Save</button> &nbsp;&nbsp;&nbsp;
+                      <button class="button button1" (click)=" onCancel()">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+</tr>
+</table>
+<div style="text-align:right">
+    <h4>
+      Maintainer is SHIVALIKA GUPTA
+    </h4>
+  </div>
+
